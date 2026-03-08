@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Regalos – Luz & Roma</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn">← Volver</a>
+  <h1><span>Luz</span> & <span>Roma</span></h1>
+  <p>
+    Si querés hacernos un regalo, acá te dejamos algunas ideas para esta nueva etapa.
+    ¡Gracias por acompañarnos!
+  </p>
+</header>
+
+<section class="gift-controls">
+  <label for="sort">Ordenar por:</label>
+  <select id="sort">
+    <option value="default">Por defecto</option>
+    <option value="asc">Precio (menor a mayor)</option>
+    <option value="desc">Precio (mayor a menor)</option>
+  </select>
+</section>
+
+<section class="gift-list">
+
+  <!-- 1 -->
+  <div class="gift-item" data-price="65000" data-currency="ars">
+    <img src="platos.jpg" alt="Platos">
+    <h3>Platos</h3>
+    <p>$65.000</p>
+    <button onclick="openModal('PLATOS')">Regalar</button>
+  </div>
+
+  <!-- 2 -->
+  <div class="gift-item" data-price="130000" data-currency="ars">
+    <img src="vino-toscana.jpg" alt="Cata de Vino en la Toscana">
+    <h3>Cata de Vino en la Toscana</h3>
+    <p>$130.000</p>
+    <button onclick="openModal('CATA VINO TOSCANA')">Regalar</button>
+  </div>
+
+  <!-- 3 -->
+  <div class="gift-item" data-price="190000" data-currency="ars">
+    <img src="silla-escritorio.jpg" alt="Silla Escritorio">
+    <h3>Silla Escritorio</h3>
+    <p>$190.000</p>
+    <button onclick="openModal('SILLA ESCRITORIO')">Regalar</button>
+  </div>
+
+  <!-- 4 -->
+  <div class="gift-item" data-price="230000" data-currency="ars">
+    <img src="microondas.jpg" alt="Microondas">
+    <h3>Microondas</h3>
+    <p>$230.000</p>
+    <button onclick="openModal('MICROONDAS')">Regalar</button>
+  </div>
+
+  <!-- 5 -->
+  <div class="gift-item" data-price="305000" data-currency="ars">
+    <img src="catamaran.jpg" alt="Travesía Catamarán Santorini">
+    <h3>Travesía Catamarán Santorini</h3>
+    <p>$305.000</p>
+    <button onclick="openModal('CATAMARAN SANTORINI')">Regalar</button>
+  </div>
+
+  <!-- 6 -->
+  <div class="gift-item" data-price="630000" data-currency="ars">
+    <img src="rack-tv.jpg" alt="Rack de Tele">
+    <h3>Rack de Tele</h3>
+    <p>$630.000</p>
+    <button onclick="openModal('RACK TV')">Regalar</button>
+  </div>
+
+  <!-- 7 -->
+  <div class="gift-item" data-price="630000" data-currency="ars">
+    <img src="alianzas.jpg" alt="Alianzas">
+    <h3>Alianzas</h3>
+    <p>$630.000</p>
+    <button onclick="openModal('ALIANZAS')">Regalar</button>
+  </div>
+
+  <!-- 8 -->
+  <div class="gift-item" data-price="1130000" data-currency="ars">
+    <img src="cama.jpg" alt="Cama Matrimonial">
+    <h3>Cama Matrimonial</h3>
+    <p>$1.130.000</p>
+    <button onclick="openModal('CAMA MATRIMONIAL')">Regalar</button>
+  </div>
+
+  <!-- 9 -->
+  <div class="gift-item" data-price="1400000" data-currency="ars">
+    <img src="heladera.jpg" alt="Heladera">
+    <h3>Heladera</h3>
+    <p>$1.400.000</p>
+    <button onclick="openModal('HELADERA')">Regalar</button>
+  </div>
+
+  <!-- 10 -->
+  <div class="gift-item" data-price="1830000" data-currency="ars">
+    <img src="sillon.jpg" alt="Sillón">
+    <h3>Sillón</h3>
+    <p>$1.830.000</p>
+    <button onclick="openModal('SILLON')">Regalar</button>
+  </div>
+
+  <!-- 11 -->
+  <div class="gift-item" data-price="3000000" data-currency="ars">
+    <img src="termomix.jpg" alt="Termomix">
+    <h3>Termomix</h3>
+    <p>$3.000.000</p>
+    <button onclick="openModal('TERMOMIX')">Regalar</button>
+  </div>
+
+  <!-- 12 -->
+  <div class="gift-item" data-price="0" data-currency="ars">
+    <img src="gift-card.jpg" alt="Gift Card">
+    <h3>Gift Card</h3>
+    <p>Regalanos el monto que quieras</p>
+    <button onclick="openModal('GIFT CARD')">Regalar</button>
+  </div>
+
+</section>
+
+<!-- MODAL -->
+<div id="bankModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <h2>Datos Bancarios</h2>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="ars">Pesos</button>
+      <button class="tab-btn" data-tab="usd">USD</button>
+    </div>
+
+    <div class="tab-content active" id="tab-ars">
+      <p><strong>[Banco Placeholder]</strong></p>
+      <p>Luz & Roma</p>
+      <div class="cbu-container">
+        <span id="cbu-ars">CBU: 0000000000000000000000</span>
+        <button class="copy-btn" onclick="copyCBU('cbu-ars')">📋 Copiar</button>
+      </div>
+      <p>Alias: luz.roma.pesos</p>
+    </div>
+
+    <div class="tab-content" id="tab-usd">
+      <p><strong>[Banco Placeholder]</strong></p>
+      <p>Luz & Roma</p>
+      <div class="cbu-container">
+        <span id="cbu-usd">CBU: 1111111111111111111111</span>
+        <button class="copy-btn" onclick="copyCBU('cbu-usd')">📋 Copiar</button>
+      </div>
+      <p>Alias: luz.roma.usd</p>
+    </div>
+
+    <hr>
+    <p><em id="motivo-text"></em></p>
+    <p id="copy-status" class="copy-status"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

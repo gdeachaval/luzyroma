@@ -1,0 +1,497 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f7f7f5;
+  color: #1f2933;
+  line-height: 1.55;
+  font-size: 16px;
+}
+
+/* =========================
+   LANDING PAGE HERO
+========================= */
+.landing-page {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.hero-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('landing.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.hero-title span {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background-color: white;
+  color: #2f3b32;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  background-color: #2f3b32;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  background-color: #2f3b32;
+  color: white;
+  text-align: center;
+  padding: 2.5rem 1.25rem;
+}
+
+header h1 {
+  font-size: 2.1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.95;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================
+   CURRENCY SELECTOR
+========================= */
+.currency-selector {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.currency-btn {
+  padding: 0.45rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.currency-btn.active {
+  background: #2f3b32;
+  color: white;
+  border-color: #2f3b32;
+}
+
+/* =========================
+   SORT CONTROLS
+========================= */
+.gift-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 1200px;
+  margin: 0.5rem auto 0;
+  padding: 0 1.25rem;
+  font-size: 0.9rem;
+}
+
+.gift-controls select {
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-family: 'Inter', sans-serif;
+}
+
+/* =========================
+   GRID
+========================= */
+.gift-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================
+   GIFT CARD
+========================= */
+.gift-item {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+  text-align: center;
+}
+
+.gift-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+}
+
+.gift-item.fade-out {
+  opacity: 0;
+  transform: scale(0.97);
+}
+
+.gift-item.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================
+   IMAGE (CIRCULAR, LARGE)
+========================= */
+.gift-item img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 1.25rem auto 0.5rem;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.gift-item h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0.75rem 1.25rem 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+.gift-item p {
+  margin: 0 1.25rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.gift-item button {
+  margin: 0 1.25rem 1.25rem;
+  width: calc(100% - 2.5rem);
+  background-color: #2f3b32;
+  color: white;
+  border: none;
+  padding: 0.6rem 0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.gift-item button:hover {
+  background-color: #243028;
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 1.75rem;
+  border-radius: 14px;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+  position: relative;
+}
+
+.modal-content h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.modal-content p {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #555;
+}
+
+/* =========================
+   TABS
+========================= */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 0.45rem;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #f3f4f6;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.tab-btn.active {
+  background: #2f3b32;
+  color: white;
+  border-color: #2f3b32;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* =========================
+   COPY
+========================= */
+.cbu-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0.5rem 0;
+  flex-wrap: wrap;
+}
+
+.copy-btn {
+  background: transparent;
+  border: 1px solid #2f3b32;
+  padding: 0.25rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background: #2f3b32;
+  color: white;
+}
+
+.copy-status {
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+  color: #2f3b32;
+}
+
+/* =========================
+   LOCATION PAGE
+========================= */
+.location-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+}
+
+.location-content {
+  background: white;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.location-details h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2f3b32;
+  margin-bottom: 1rem;
+}
+
+.location-details .address {
+  font-size: 1.05rem;
+  color: #4b5563;
+  margin: 0.25rem 0;
+}
+
+.map-container {
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+.maps-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #2f3b32;
+  color: white;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.maps-btn:hover {
+  background-color: #243028;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .gift-item img {
+    width: 190px;
+    height: 190px;
+  }
+
+  .gift-controls {
+    justify-content: center;
+  }
+
+  .location-content {
+    padding: 1.5rem;
+  }
+
+  .location-details h2 {
+    font-size: 1.5rem;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+
+  .maps-btn {
+    width: 100%;
+    padding: 0.9rem;
+  }
+}
