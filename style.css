@@ -29,18 +29,17 @@ body {
 .landing-page {
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 .hero-container {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100svh; /* modern mobile-safe viewport */
   background-image: url('landing.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* push content down */
   justify-content: center;
 }
 
@@ -56,13 +55,14 @@ body {
   text-align: center;
   color: white;
   padding: 2rem;
+  padding-bottom: 8vh; /* keeps buttons above bottom UI */
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
