@@ -67,8 +67,8 @@ body {
 }
 
 .hero-title span {
-  font-weight: 400;
-  font-style: italic;
+  font-weight: inherit;
+  font-style: normal;
 }
 
 .hero-buttons {
@@ -118,7 +118,9 @@ body {
 
   .hero-btn {
     width: 100%;
-    max-width: 380px;
+    max-width: 350px;
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
   }
 }
 
