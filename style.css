@@ -46,7 +46,13 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.35) 35%,
+    rgba(0,0,0,0.15) 60%,
+    rgba(0,0,0,0.05) 100%
+  );
 }
 
 .hero-content {
@@ -89,6 +95,7 @@ body {
   border-radius: 12px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  min-height: 48px;
 }
 
 .hero-btn:hover {
@@ -503,5 +510,36 @@ header p {
   .maps-btn {
     width: 100%;
     padding: 0.9rem;
+  }
+}
+
+
+.hero-title {
+  animation: fadeTitle 1.2s ease-out;
+}
+
+.hero-buttons {
+  animation: fadeButtons 1.4s ease-out;
+}
+
+@keyframes fadeTitle {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeButtons {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
