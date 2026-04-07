@@ -440,6 +440,14 @@ header p {
   margin-bottom: 1rem;
 }
 
+.location-details .ceremony-time {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #6b7c70;
+  margin-top: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+
 .location-details .address {
   font-size: 1.05rem;
   color: #4b5563;
